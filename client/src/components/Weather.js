@@ -1,13 +1,19 @@
 import React from 'react';
 
-function weather(props) {
+function Weather(props) {
+    const myObj = props.data
+
     return (
         <div>
             Weather
-            {props.data}
-            {console.log(props.data)}
+            {console.log(myObj)}
+            <div>
+                <h3>Temperature</h3>
+                {myObj}
+                {/* <p>{console.log(props.data.main)}</p> */}
+            </div>
         </div>
     );
 }
 
-export default weather;
+export default Weather;
