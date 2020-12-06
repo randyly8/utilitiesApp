@@ -1,16 +1,19 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 
 function Weather(props) {
     const myObj = props.data
+
+    useEffect(() => {
+
+    },[])
 
     return (
         <div>
             Weather
             {console.log(myObj)}
             <div>
-                <h3>Temperature</h3>
-                {myObj}
-                {/* <p>{console.log(props.data.main)}</p> */}
+                <label>Location: </label>
+                <label>Coordinates: </label>
             </div>
         </div>
     );
