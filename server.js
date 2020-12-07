@@ -31,15 +31,15 @@ app.get('/api/weather/:location', (req, res) => {
                 // The whole response has been received. Print out the result.
                 resp.on('end', () => {
                     // console.log(`https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates[0]}&lon=${coordinates[1]}&appid=${api.weatherApi}`)
-                    // console.log(JSON.parse(data));
+                    // console.log(JSON.parse(data).timezone_offset);
 
                     const Jdata = JSON.parse(data);
                     res.json([
                         Jdata.current, 
-                        Jdata.daily, 
+                        Jdata.minutely, 
                         Jdata.hourly, 
-                        Jdata.minutely,
-                        // Jdata
+                        Jdata.daily,
+                        Jdata.timezone_offset
                     ]);
                 });
             }).on("error", (err) => {
